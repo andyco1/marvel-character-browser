@@ -1,0 +1,7 @@
+{
+  "name": "marvel-character-browser",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
