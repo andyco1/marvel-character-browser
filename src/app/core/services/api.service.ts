@@ -1,11 +1,11 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
-import { environment } from '../../../environments/environment';
-import { MarvelApiResponse, MarvelCharacter } from '../../shared/models/marvel-character';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { MarvelApiResponse } from "src/app/shared/models/marvel-character";
+import { environment } from "src/environments/environment.prod";
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class ApiService {
     private apiUrl = environment.marvelApiUrl;
@@ -13,11 +13,18 @@ export class ApiService {
 
     constructor(private http: HttpClient) {}
 
-    public getCharacters(nameStartsWith?: string): Observable<MarvelApiResponse> {
-        const url = `${this.apiUrl}/characters?apikey=${this.publicKey}`;
-    
-        const finalUrl = nameStartsWith ? `${url}&nameStartsWith=${nameStartsWith}` : url;
-    
-        return this.http.get<MarvelApiResponse>(finalUrl);
+    public getCharacters(offset: number = 0, limit: number = 20, nameStartsWith?: string): Observable<MarvelApiResponse> {
+        let url = `${this.apiUrl}/characters?apikey=${this.publicKey}&offset=${offset}&limit=${limit}`;
+        
+        if (nameStartsWith) {
+            url += `&nameStartsWith=${nameStartsWith}`;
+        }
+        
+        return this.http.get<MarvelApiResponse>(url);
+    }
+
+    public getCharacterById(id: number): Observable<MarvelApiResponse> {
+        const url = `${this.apiUrl}/characters/${id}?apikey=${this.publicKey}`;
+        return this.http.get<MarvelApiResponse>(url);
     }
 }
