@@ -16,6 +16,7 @@ import { debounceTime, Subject } from 'rxjs';
 export class CharacterSearchComponent {
 
     @Output() searchTermChanged: EventEmitter<string> = new EventEmitter<string>();
+    
     private searchSubject = new Subject<string>();
 
     constructor() {
