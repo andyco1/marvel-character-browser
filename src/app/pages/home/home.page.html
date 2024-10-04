@@ -3,7 +3,12 @@
         <ion-title>Marvel Character Browser</ion-title>
     </ion-toolbar>
 </ion-header>
+
 <ion-content>
     <app-character-search (searchTermChanged)="onSearchTermChanged($event)"></app-character-search>
     <app-character-list [characters]="characters"></app-character-list>
+
+    <ion-infinite-scroll (ionInfinite)="loadMoreCharacters($event)">
+        <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Loading more characters..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>

@@ -4,8 +4,6 @@ ion-content {
     color: var(--ion-text-color);
 }
 
-.custom-loading {
-    --background: rgba(0, 0, 0, 0.8);
-    --spinner-color: var(--ion-color-primary);
-    --message-color: var(--ion-text-color);
+ion-infinite-scroll {
+    padding-top: 1.25rem;
 }
