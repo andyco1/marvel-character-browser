@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>{{ character?.name }}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismiss()">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="character">
+    <div class="character-detail">
+        <img
+            [src]="character.thumbnail.path + '.' + character.thumbnail.extension"
+            alt="{{ character.name }}"
+        />
+        <h2>{{ character.name }}</h2>
+        <p>{{ character.description || 'No description available.' }}</p>
+    </div>
+</ion-content>

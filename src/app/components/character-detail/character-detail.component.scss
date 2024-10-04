@@ -1,0 +1,30 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.character-detail {
+    text-align: center;
+    padding: 20px;
+
+    img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 8px;
+    }
+
+    h2 {
+        margin-top: 20px;
+        color: #ffffff;
+    }
+
+    p {
+        margin-top: 10px;
+        color: #dddddd;
+    }
+}
+
+ion-content {
+    --background: #1b1b1b;
+}
