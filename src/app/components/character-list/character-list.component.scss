@@ -34,11 +34,11 @@ ion-card-title {
     margin: 10px 0;
     color: #ffffff;
     padding: 0 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    overflow: hidden; //
+    text-overflow: ellipsis; //
+    display: -webkit-box; //
+    -webkit-line-clamp: 2; //
+    -webkit-box-orient: vertical; // These stop the title overflowing the card and adds ellipsis if they do.
 }
 
 ion-card-content {
@@ -46,7 +46,7 @@ ion-card-content {
 }
 
 ion-card:hover {
-    box-shadow: 0 8px 16px rgba(230, 36, 41, 0.4);
-    filter: brightness(1.1);
+    box-shadow: 0 8px 16px rgba(230, 36, 41, 0.4); // Adds a shadow on hover
+    filter: brightness(1.1); // Slightly brightens card on hover
     z-index: 1;
 }
