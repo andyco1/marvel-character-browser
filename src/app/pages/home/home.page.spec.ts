@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { HomePage } from './home.page';
-import { ApiService } from '../core/services/api.service';
-import { NotificationService } from '../core/services/notification.service';
-import { mockApiResponse } from '../shared/testing/mock-data';
+import { ApiService } from '../../core/services/api.service';
+import { NotificationService } from '../../core/services/notification.service';
+import { mockApiResponse } from '../../shared/testing/mock-data';
 
 describe('HomePage', () => {
     let component: HomePage;
